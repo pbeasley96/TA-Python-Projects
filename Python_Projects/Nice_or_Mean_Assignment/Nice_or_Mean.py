@@ -13,14 +13,14 @@ def start(nice=0,mean=0,name=""):
 
 def describe_game(name):
     if name !="":
-        print("\nThank you for playing again, ()!".format(name))
+        print("\nThank you for playing again, {}!".format(name))
     else:
         stop = True
         while stop:
             if name == "":
                 name = input("\nWhat is your name? \n>>> ").capitalize()
                 if name != "":
-                    print("\nWelcome, ()!".format(name))
+                    print("\nWelcome, {}!".format(name))
                     print("\nIn this game, you will be greeted \nby several different people. \nYou can choose to be nice or mean")
                     print("but at the end of the game your fate \nwill be sealed by your actions.")
                     stop = False
@@ -43,7 +43,7 @@ def nice_mean(nice,mean,name):
     score(nice,mean,name)
 
 def show_score(nice,mean,name):
-    print("\n(), your current total: \n((), Nice) and ((), Mean)".format(name,nice,mean))
+    print("\n(), your current total: \n({}, Nice) and ({}, Mean)".format(name,nice,mean))
 
 
 def score(nice,mean,name):
@@ -55,11 +55,11 @@ def score(nice,mean,name):
         nice_mean(nice,mean,name)
 
 def win(nice,mean,name):
-    print("\nNice job (), you win! \nEveryone loves you and you've \nmade lost of friends along the way!".format(name))
+    print("\nNice job {}, you win! \nEveryone loves you and you've \nmade lost of friends along the way!".format(name))
     again(nice,mean,name)
 
 def lose(nice,mean,name):
-    print("\nAhhh too bad, game over! \n(), you live in a dirty beat-up \nvan by the river, wretched and alone!".format(name))
+    print("\nAhhh too bad, game over! \n{}, you live in a dirty beat-up \nvan by the river, wretched and alone!".format(name))
     again(nice,mean,name)
 
 
