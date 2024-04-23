@@ -12,3 +12,11 @@ obj = Protected()
 obj.getPrivate()
 obj.setPrivate(26)
 obj.getPrivate()
+
+class Protected:
+    def __init__(self):
+        self.protectedVar = 0
+
+obj = Protected()
+obj._protectedVar = 45
+print(obj._protectedVar)
