@@ -13,10 +13,10 @@ obj.getPrivate()
 obj.setPrivate(26)
 obj.getPrivate()
 
-class Protected:
+class Base:
     def __init__(self):
-        self.protectedVar = 0
+        self._protectedVar = 0
 
-obj = Protected()
+obj = Base()
 obj._protectedVar = 45
 print(obj._protectedVar)
