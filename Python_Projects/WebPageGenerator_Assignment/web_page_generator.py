@@ -15,8 +15,8 @@ class ParentWindow(Frame):
 
         self.lbl = Label(self.master, text="Enter custom text or click the Default HTML page button")
         self.lbl.grid(row=0, column=0, padx=(20, 20), pady=(30, 0))
-        self.lbl = Entry(width=75)
-        self.lbl.grid(row=1, column=0, columnspan=3, padx=(20, 20), pady=(30, 20), sticky=('we'))
+        self.txtEntry = Entry(width=75)
+        self.txtEntry.grid(row=1, column=0, columnspan=3, padx=(20, 20), pady=(30, 20), sticky=('we'))
         
     def defaultHTML(self):
         htmlText = "Stay tuned for our amazing winter sale!"
@@ -27,11 +27,12 @@ class ParentWindow(Frame):
         webbrowser.open_new_tab("index.html")
 
     def get_data(self):
-        self.data = self.get_data.get()
-        self.label.config(text=self.data)
-        self.get_data.delete(0, END)
-        print(self.data)
-        
+        htmlText = self.txtEntry.get()
+        htmlFile = open("index.html", "w")
+        htmlContent = "<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
+        htmlFile.write(htmlContent)
+        htmlFile.close()
+        webbrowser.open_new_tab("index.html")
 
 if __name__=="__main__":
     root = tk.Tk()
